@@ -66,12 +66,11 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         print (foundProducts)
     }
     
-
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foundProducts.count
     }
-   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else  {
@@ -96,7 +95,7 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
                 }
             }
         }
-       
+        
         return cell
     }
 }
@@ -107,7 +106,6 @@ extension ViewController: UISearchBarDelegate {
         let params : [String:String] = ["SearchString": searchBarText]
         
         getData(url: baseUrl, parameters: params, headers: requredHeaders)
-        
     }
 }
 
